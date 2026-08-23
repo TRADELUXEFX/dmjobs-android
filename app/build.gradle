@@ -20,6 +20,15 @@ android {
             minifyEnabled true
             shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            
+            // Build config fields for release - from GitHub Secrets
+            buildConfigField "String", "SUPABASE_URL", "\"${System.getenv("SUPABASE_URL") ?: ""}\""
+            buildConfigField "String", "SUPABASE_ANON_KEY", "\"${System.getenv("SUPABASE_ANON_KEY") ?: ""}\""
+        }
+        debug {
+            // For local development only
+            buildConfigField "String", "SUPABASE_URL", "\"https://urvqtpmijkkofuetfeug.supabase.co\""
+            buildConfigField "String", "SUPABASE_ANON_KEY", "\"sb_publishable_uxxL8wfW8sJ4SVApvlPxew_7KFuV4IC\""
         }
     }
 
@@ -34,6 +43,7 @@ android {
 
     buildFeatures {
         viewBinding true
+        buildConfig true
     }
 }
 
