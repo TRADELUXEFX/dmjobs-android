@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Header -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/green_deep"
+            android:orientation="vertical"
+            android:padding="24dp"
+            android:paddingTop="48dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Job Overview"
+                android:textColor="#99FFFFFF"
+                android:textSize="12sp"
+                android:textAllCaps="true"
+                android:letterSpacing="0.1" />
+
+            <TextView
+                android:id="@+id/tvJobTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Job Title"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:layout_marginTop="4dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <!-- Stats row -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="16dp">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:background="@color/white"
+                    android:padding="14dp"
+                    android:layout_marginEnd="6dp">
+                    <TextView android:id="@+id/tvContacts" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="0" android:textSize="20sp" android:textStyle="bold" android:textColor="@color/text_primary" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="CONTACTS" android:textSize="10sp" android:textColor="@color/text_muted" android:letterSpacing="0.05" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:background="@color/white"
+                    android:padding="14dp"
+                    android:layout_marginStart="6dp">
+                    <TextView android:id="@+id/tvPayPerDm" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="₦0" android:textSize="20sp" android:textStyle="bold" android:textColor="@color/green_deep" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="PER DM" android:textSize="10sp" android:textColor="@color/text_muted" android:letterSpacing="0.05" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="16dp">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:background="@color/white"
+                    android:padding="14dp"
+                    android:layout_marginEnd="6dp">
+                    <TextView android:id="@+id/tvTotalPay" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="₦0" android:textSize="18sp" android:textStyle="bold" android:textColor="@color/green" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="MAX EARNINGS" android:textSize="10sp" android:textColor="@color/text_muted" android:letterSpacing="0.05" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:background="@color/white"
+                    android:padding="14dp"
+                    android:layout_marginStart="6dp">
+                    <TextView android:id="@+id/tvDailyLimit" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="30/day" android:textSize="18sp" android:textStyle="bold" android:textColor="@color/text_primary" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="DAILY LIMIT" android:textSize="10sp" android:textColor="@color/text_muted" android:letterSpacing="0.05" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Message preview -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@color/white"
+                android:padding="16dp"
+                android:layout_marginBottom="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="MESSAGE TO SEND"
+                    android:textSize="11sp"
+                    android:textColor="@color/text_muted"
+                    android:textAllCaps="true"
+                    android:letterSpacing="0.05"
+                    android:layout_marginBottom="10dp" />
+
+                <TextView
+                    android:id="@+id/tvMessage"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textColor="@color/text_primary"
+                    android:textSize="14sp"
+                    android:lineSpacingMultiplier="1.4"
+                    android:background="@color/green_pale"
+                    android:padding="12dp" />
+            </LinearLayout>
+
+            <!-- Details -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@color/white"
+                android:padding="16dp"
+                android:layout_marginBottom="24dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="DETAILS"
+                    android:textSize="11sp"
+                    android:textColor="@color/text_muted"
+                    android:textAllCaps="true"
+                    android:letterSpacing="0.05"
+                    android:layout_marginBottom="10dp" />
+
+                <TextView android:id="@+id/tvEstTime" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textColor="@color/text_muted" android:textSize="13sp" android:layout_marginBottom="4dp" />
+                <TextView android:id="@+id/tvDelay" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textColor="@color/text_muted" android:textSize="13sp" />
+            </LinearLayout>
+
+            <!-- Buttons -->
+            <Button
+                android:id="@+id/btnAccept"
+                style="@style/DMJobs.Button.Primary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Accept Job"
+                android:layout_marginBottom="12dp" />
+
+            <Button
+                android:id="@+id/btnReject"
+                style="@style/DMJobs.Button.Outline"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Reject / Use Different Code" />
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>
