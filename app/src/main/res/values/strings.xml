@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">DM Jobs</string>
+    <string name="accessibility_service_label">DM Jobs WhatsApp Automation</string>
+    <string name="accessibility_service_description">Allows DM Jobs to automatically tap the WhatsApp send button when sending messages on your behalf.</string>
+</resources>
