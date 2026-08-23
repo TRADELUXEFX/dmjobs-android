@@ -36,7 +36,7 @@ while [ -h "$PRG" ] ; do
     fi
 done
 SAVED="`pwd`"
-cd "`dirname \"$PRG\"`/" >/dev/null
+cd "`dirname "$PRG"`/" >/dev/null
 APP_HOME="`pwd -P`"
 cd "$SAVED" >/dev/null
 
@@ -51,14 +51,14 @@ MAX_FD="maximum"
 
 warn () {
     echo "$*"
-}
+} >&2
 
 die () {
     echo
     echo "$*"
     echo
     exit 1
-}
+} >&2
 
 # OS specific support (must be 'true' or 'false').
 cygwin=false
@@ -129,7 +129,6 @@ fi
 if [ "$cygwin" = "true" -o "$msys" = "true" ] ; then
     APP_HOME=`cygpath --path --mixed "$APP_HOME"`
     CLASSPATH=`cygpath --path --mixed "$CLASSPATH"`
-
     JAVACMD=`cygpath --unix "$JAVACMD"`
 
     # We build the pattern for arguments to be converted via cygpath
@@ -142,15 +141,6 @@ if [ "$cygwin" = "true" -o "$msys" = "true" ] ; then
     OURCYGPATTERN="(^($ROOTDIRS)$|^/usr/local/gradle)"
     CLASSPATH=`cygpath --path --mixed "$CLASSPATH"`
 
-    # Add a user-defined CLASSPATH if it exists
-    if [ -n "$CLASSPATH" ] ; then
-        CLASSPATH=`cygpath --path --mixed "$CLASSPATH"`
-    fi
-fi
-
-# Determine the startup jvm args
-if [ -n "$JAVA_OPTS" ] ; then
-    JVMOPTS="$JAVA_OPTS"
 fi
 
 # Collect all arguments for the java command, stacking in reverse order:
@@ -165,19 +155,8 @@ fi
 if [ "$cygwin" = "true" -o "$msys" = "true" ] ; then
     APP_HOME=`cygpath --path --mixed "$APP_HOME"`
     CLASSPATH=`cygpath --path --mixed "$CLASSPATH"`
-
     JAVACMD=`cygpath --unix "$JAVACMD"`
-
-    # We build the pattern for arguments to be converted via cygpath
-    ROOTDIRSRAW=`find -L / -maxdepth 2 -name .gradle -o -name build -type d 2>/dev/null`
-    SEP=""
-    for dir in $ROOTDIRSRAW ; do
-        ROOTDIRS="$ROOTDIRS$SEP$dir"
-        SEP="|"
-    done
-    OURCYGPATTERN="(^($ROOTDIRS)$|^/usr/local/gradle)"
-    CLASSPATH=`cygpath --path --mixed "$CLASSPATH"`
 
 fi
 
-exec "$JAVACMD" "$@"
+exec "$JAVACMD" $DEFAULT_JVM_OPTS $GRADLE_OPTS "-Dorg.gradle.appname=$APP_BASE_NAME" -classpath "$CLASSPATH" org.gradle.wrapper.GradleWrapperMain "$@"
