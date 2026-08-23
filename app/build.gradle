@@ -57,4 +57,9 @@ dependencies {
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3'
 
     implementation 'org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.3'
+
+    // Dependency constraints to prevent version conflicts
+    constraints {
+        implementation('io.ktor:ktor-client-bom:2.3.8')
+    }
 }
